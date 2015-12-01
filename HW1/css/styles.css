@@ -22,7 +22,7 @@ ul { display: inline-block;
 #wrapper {
 	max-width: 801px;
 	max-height:900px;
-	margin: 0;
+	margin: auto;
 	}
 #header {
 	display: block;
@@ -55,7 +55,7 @@ ul { display: inline-block;
 	border-right: 1px solid #c0c663;
 }
 #bord{
-	border-right:0;
+	border:none;
 }
 #first{
 	margin-left: 75px;
