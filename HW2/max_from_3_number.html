@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Нахождение большего числа из трех</title>
+	<script>
+
+		var a_Str=prompt("Нахождение большего числа из трех\nВведите число 1");
+		var b_Str=prompt("Нахождение большего числа из трех\nВведите число 2");
+		var c_Str=prompt("Нахождение большего числа из трех\nВведите число 3");
+
+		var a = parseInt(a_Str);
+		var b = parseInt(b_Str);
+		var c = parseInt(c_Str);
+
+		if (a_Str==null||b_Str==null||c_Str==null){
+			alert('Вы нажали Отмена. Перезагрузите страницу и введите числа заново');
+		}
+		else if (a==b||a==c||b==c) {
+			alert('Есть одинаковые числа');
+		}
+		else if (a>b&&b>c) {
+			a*=10; b*=5;
+		}
+		else if (a>c&&c>b) {
+			a*=10; c*=5;
+		}
+		else if (b>a&&a>c) {
+			b*=10; a*=5;
+		}
+		else if (b>c&&c>a) {
+			b*=10; c*=5;
+		}
+		else if (c>a&&a>b) {
+			c*=10; a*=5;
+		}
+		else if (c>b&&b>a) {
+			c*=10; b*=5;
+		}
+		else {alert('Вы ввели не число!');}
+
+	alert(' a = '+a+' b = '+b+' c= '+c);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
