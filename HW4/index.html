@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+function randomInteger(min, max) {
+  var rand = min + Math.random() * (max + 1 - min);
+  rand = Math.floor(rand);
+  return rand;
+}
+var sizeArr=10;
+var arr = [];
+for (var i = 0; i < sizeArr; i++) {
+   arr[i] = [];
+   for (var j = 0; j < sizeArr; j++) {
+      arr[i][j] = randomInteger(1,100);
+   }
+}
+console.table(arr);
+
+var resultArr = [];//Треугольник: верх-->правая сторона-->главная диагональ
+var resultArr1 = [];//Треугольник верх-->побочная диагональ-->левая сторона
+var resultArr2= [];//Квадрат против часовой стрелки
+
+for (var j = 0; j < sizeArr; j++) {
+	resultArr.push( arr[0][j] );
+	resultArr1.push( arr[0][j] );
+}
+
+resultArr2.push( arr[0][0] );
+
+for (var i = 1; i < sizeArr; i++) {
+	resultArr.push( arr[i][sizeArr-1] );
+	resultArr1.push( arr[i][sizeArr-1-i] );
+	resultArr2.push( arr[i][0] );
+}
+for (var j = 1; j < sizeArr - 1; j++) {
+	resultArr2.push( arr[sizeArr-1][j] );
+}
+
+resultArr2.push( arr[sizeArr-1][sizeArr-1] );
+
+for (var i = sizeArr-2; i >0; i--) {
+	for (var j = sizeArr-2; j >0; j--) {
+		if ( i=j ) {
+		resultArr.push( arr[i][j] );
+		resultArr1.push( arr[i][0] );
+		resultArr2.push( arr[i][sizeArr-1] );
+		}
+	}
+}
+for (var j = sizeArr-1; j >0; j--) {
+	resultArr2.push( arr[0][j] );
+}
+console.log('Треугольник: верх-->правая сторона-->главная диагональ');
+console.log(resultArr);
+console.log('Количество элементов: ' + resultArr.length);
+console.log('');
+console.log('Треугольник верх-->побочная диагональ-->левая сторона');
+console.log(resultArr1);
+console.log('Количество элементов: ' + resultArr1.length);
+console.log('');
+console.log('Квадрат против часовой стрелки');
+console.log(resultArr2);
+console.log('Количество элементов: ' + resultArr2.length);
+</script>
