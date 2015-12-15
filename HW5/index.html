@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+function randomInteger(min, max) {
+  var rand = min + Math.random() * (max + 1 - min);
+  rand = Math.floor(rand);
+  return rand;
+}
+var sizeArr=50;
+var arr = [];
+for (var i = 0; i < sizeArr; i++) {
+   arr[i] = randomInteger(1,100);
+  }
+console.log(arr);
+
+function getComonElements (array) {
+  var arrayOfElements = [];
+  for (var i = 1; i <array.length; i++) {
+    for (var j = i-1; j >=0; j--) {// Что-бы не совпадали, хотя каждый цикл недобирает 1 элемент, вместе проходят все.
+        if (array[j]==array[i]) {
+          var onlyOne = true;
+          for (var k=0; k < arrayOfElements.length; k++) {
+                if (arrayOfElements[k] == array[i]) {
+                onlyOne = false;
+                }
+           }
+          if (onlyOne) {
+               arrayOfElements.push(array[i]);
+          }
+        }
+    }
+  }
+  return 'Одинаковые элементы в массиве: ' + arrayOfElements;
+}
+console.log (getComonElements(arr));
+</script>
