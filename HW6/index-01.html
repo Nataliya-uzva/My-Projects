@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+/*Написать функцию, которая принимает строку, например "я люблю джаваскрипт" и разворачивает ее задом наперед, а-ля «главрыба» - «абырвалг».
+
+Подсказки:
+0 - внутри самой функции создать переменную для результата (var result = ''; почему не просто  var result?)
+1 - пройти строку как массив из конца в начало (да, у строки тоже есть свойство length)
+2 - получать символ командой из строки методом str.charAt(i), где str -  внезапно строка, i - итерация цикла.
+3 - дописывать (+=) в результат каждый символ в цикле.
+4 - не забыть вернуть результат
+
+проверка: var abyrvalg = getReverseString(‘я люблю джаваскрипт!’);
+                   console.log(abyrvalg);*/
+
+function getReverseString(text) {
+ var result = '';/* если без кавычек, то result = 'undefined' (значение при объявлении) приведется 
+ 					к строке и добавится к результату из цикла*/
+  var lengthStr = text.length;
+for (var i = lengthStr - 1; i >= 0; i--) {
+  result += text.charAt(i);
+}
+return result;
+}
+
+var abyrvalg = getReverseString('я люблю джаваскрипт!');
+                   console.log(abyrvalg);
+</script>
