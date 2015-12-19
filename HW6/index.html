@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+function randomInteger(min, max) {
+  var rand = min + Math.random() * (max + 1 - min);
+  rand = Math.floor(rand);
+  return rand;
+}
+var sizeArr=10;
+var arr = [];
+for (var i = 0; i < sizeArr; i++) {
+   arr[i] = [];
+   for (var j = 0; j < sizeArr; j++) {
+      arr[i][j] = randomInteger(1,100);
+   }
+}
+console.table(arr);
+
+function returnEdge (arr, edge) {
+	var result = [];
+switch (edge) {
+	case 'top':
+	case 0:
+		result = arr[0].slice(0);
+     break;
+	case 'bottom':
+	case 2:
+     		result = arr[sizeArr-1].slice(0);
+     break;
+  	case 'right':
+  	case 1:
+  	case 'left':
+  	case 3:
+          	for (var i = 0; i < sizeArr; i++) {
+      		if (edge == 'left' || edge == 3) {
+      	 	result.push(arr[i][0]);
+     			}
+     			else if (edge == 'right' || edge == 1) {
+           	result.push(arr[i][sizeArr-1]);
+     			}
+    		}
+    	break;
+default:
+console.log ( 'Вы ввели не корректно грань массива, попробуйте ввести еще раз' );
+}
+
+  return console.log (edge +' : ' + result);
+}
+
+console.log( returnEdge (arr, 'top') );// отработало
+console.log( returnEdge (arr, 'bottom') );// отработало
+console.log( returnEdge (arr, 'right') );// отработало
+console.log( returnEdge (arr, 'left') );// отработало
+console.log( returnEdge (arr, 02) );// отработало, т.е. привело к 2
+console.log( returnEdge (arr, 0002) );// отработало
+console.log( returnEdge (arr, 123) );// вывело сообщение
+console.log( returnEdge (arr, 'something') );// вывело сообщение
+
+</script>
