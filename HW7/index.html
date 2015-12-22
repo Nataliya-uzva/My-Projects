@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+function makeArmy() {
+
+  var shooters = [];
+
+  for (var i = 0; i < 10; i++) {
+
+    shooters.push((function(x) {
+
+      return function() {
+        alert( x );
+      };
+
+    })(i));
+  }
+
+return shooters;
+}
+
+var army = makeArmy();
+
+army[5]();
+army[3]();
+
+</script>
