@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+// так тоже работает, но не красиво показывает числа от 1 до 10 (без 0)
+/*var dateToday = setInterval( function () {
+	var now = new Date();
+	console.log (now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+	
+}, 1000);
+
+clearInterval(dateToday);*/
+
+var dateToday = setInterval( function () {
+	var now = new Date();
+
+	var formatter = new Intl.DateTimeFormat("ru", {
+ 		hour: "numeric",
+		minute: "numeric",
+  		second: "numeric"
+	});
+	console.log (formatter.format(now));
+
+}, 1000);
+
+clearInterval(dateToday);
+
+</script>
