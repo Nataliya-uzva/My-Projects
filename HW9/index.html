@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+function Accumulator(startingValue) {
+  var a = startingValue;
+ 
+  this.value = a;
+
+  this.read = function() {
+    a += +prompt('Введите число:', 0);
+  return this.value = a;
+  };
+}
+
+var accumulator = new Accumulator(1);
+accumulator.read();//2
+accumulator.read();//2
+console.log( accumulator.value );//5
+accumulator.value = 10;
+accumulator.read();//3
+console.log( accumulator.value );//8
+
+</script>
