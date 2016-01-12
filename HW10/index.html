@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+
+</body>
+</html>
+<script>
+
+function Horse(name) {
+	this.name = name;
+	this.mileage = 0;
+	this.tiredness = 0;
+	this.run = function(distance) {
+  		this.getRelax(distance);
+ 	};
+	this.getRelax = function(dist) {
+		for (var i = dist-1; i >= 0; i--) {
+			if (this.tiredness !== 10) {
+				this.tiredness +=1;
+				this.mileage +=1;
+			}
+			if (this.tiredness == 10) {
+				setTimeout( function() {
+					console.log('Лошадь отдыхает!');
+				}, 1000);
+				this.tiredness = 0;
+			}
+		}
+	};
+}
+
+var horse1 = new Horse('Black Beauty');
+</script>
