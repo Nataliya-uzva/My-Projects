@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//----------- таблица умножения:
+var table = document.createElement('table');
+
+for (var i = 1; i <= 10; i++) {
+	var tr = document.createElement('tr');
+	table.appendChild(tr);
+	for (var j = 1; j <= 10; j++) {
+		var td = document.createElement('td');
+		td.textContent = j*i;
+		tr.appendChild(td);
+	}
+}
+document.body.appendChild(table);
+
+//----------- таблица используя innerHTML:
+var table = document.createElement('table');
+var tr = '';
+for (var i = 1; i <= 10; i++) {
+	tr += '<td>' + i + '</td>';
+}
+var tr1 = '<tr>' + tr + '</tr>';
+var str = '';
+for (var j = 1; j <= 10; j++) {
+	str += tr1;
+}
+
+table.innerHTML = str; // tbody добавляет innerHTML
+document.body.appendChild(table);
+// из-за того, что фактически все время работаем со строкой не вижу способа заполнить таблицу разными значениями, кроме следующего и то не все, что хотелось бы:
+
+var table = document.createElement('table');
+var tr = '';
+for (var i = 1; i <= 10; i++) {
+	tr += '<td>' + 0 + '</td>'; // 0 - это фактически метка
+}
+var tr1 = '<tr>' + tr + '</tr>';
+var str = '';
+for (var j = 1; j <= 10; j++) {
+	str += tr1;
+}
+
+var hit = 0, arr = [];
+var pos = 0;
+while (true) {
+  var foundPos = str.indexOf(hit, pos);
+  if (foundPos == -1) break;
+
+  arr.push( foundPos );
+  pos = foundPos + 1;
+}
+var str1= str.split('');
+for (var i = 0; i < arr.length; i++) {
+	str1[arr[i]] = Number(i+1) + '';
+};
+str = str1.join("");
+
+table.innerHTML = str;
+document.body.appendChild(table);
+
+</script>

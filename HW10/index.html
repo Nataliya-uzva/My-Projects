@@ -19,6 +19,7 @@ function Horse(name) {
   		this.getRelax(distance);
  	};
 	this.getRelax = function(dist) {
+		var self = this;
 		for (var i = dist-1; i >= 0; i--) {
 			if (this.tiredness !== 10) {
 				this.tiredness +=1;
@@ -26,7 +27,7 @@ function Horse(name) {
 			}
 			if (this.tiredness == 10) {
 				setTimeout( function() {
-					console.log('Лошадь отдыхает!');
+					console.log(self.name + ' отдыхает!');
 				}, 1000);
 				this.tiredness = 0;
 			}
