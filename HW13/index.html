@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="utf-8">
+  <title>Document</title>
+</head>
+
+<body>
+
+<div id="wrapper">
+	<div class="text">
+		<h1>Лошадь</h1>
+		<p>Домашняя лошадь — животное семейства непарнокопытных, одомашненный и единственный сохранившийся подвид дикой лошади, вымершей в дикой природе, за исключением небольшой популяции лошади Прижевальского.
+		</p>
+		<button class="close">[x]</button>
+	</div>
+	<div class="text">
+		<h1>Осёл</h1>
+		<p>Домашний осёл или ишак — одомашненный подвид дикого осла, сыгравший важную историческую роль в разхозяйства и культуры человека. Все одомашненные ослы относятся к африканским ослам.
+		</p>
+		<button class="close">[x]</button>
+	</div>
+	<div class="text">
+		<h1>Корова, а также пара слов о диком быке, о волах и о тёлках. </h1>
+		<p>Коро́ва — самка домашнего быка, одомашненного подвида дикого быка, парнокопытного жвачного животного семейства полорогих. Самцы вида называются быками, молодняк — телятами, кастрированные самцы — волами. Молодых (до первой стельности) самок называют тёлками.
+		</p>
+		<button class="close">[x]</button>
+	</div>
+</div>
+
+<script>
+	var wrap = document.querySelector('#wrapper');
+
+	wrap.onclick = function(event) {
+		if (!event.target.classList.contains('close')) return;
+
+		event.target.closest("div").hidden = !event.target.closest("div").hidden;
+	}
+
+</script>
+
+</body>
+
+</html>

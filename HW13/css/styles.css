@@ -1,0 +1,48 @@
+body {
+  margin: 10px auto;
+  width: 500px;
+  font-family: Arial;
+
+}
+
+h1 {
+  margin: 0;
+  padding-bottom: .3em;
+  padding-right: 20px;
+  font-size: 1.1em;
+  color: darkblue;
+}
+
+p {
+  margin: 0;
+  padding: 0 0 .5em;
+}
+
+.text {
+  background: #edf5e1;
+  padding: 10px 20px 10px;
+  border: solid 3px #c4df9b;
+  position: relative;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+
+.close {
+  position: absolute;
+  font-size: 110%;
+  top: 0;
+  color: red;
+  right: 10px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+.close:hover {
+  background:red;
+  border-radius: 5px;
+  color: white;
+}
